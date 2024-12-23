@@ -2,7 +2,7 @@ NAME = libftprintf.a
 
 SRC = 	ft_printft.c \
 		format/ft_putchar_pf.c \
-		format/ft_putstr_pf.c \
+		format/ft_putstr_pf.c 
 
 
 OBJS = $(SRC:.c=.o)
