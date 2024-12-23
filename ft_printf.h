@@ -12,7 +12,7 @@ int ft_printf(const char *format, ...);
 
 void    ft_putchar_pf(char c, size_t *count);
 void    ft_diff(char *format, size_t *counter, va_list arg);
-
+void    ft_putstr_pf(char *str, size_t *counter);
 
 
 

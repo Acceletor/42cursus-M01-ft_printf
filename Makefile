@@ -1,8 +1,8 @@
 NAME = libftprintf.a
 
 SRC = 	ft_printf.c \
-		format/ft_putchar_pf.c \
-		format/ft_putstr_pf.c 
+		ft_putchar_pf.c \
+		ft_putstr_pf.c 
 
 
 OBJS = $(SRC:.c=.o)
