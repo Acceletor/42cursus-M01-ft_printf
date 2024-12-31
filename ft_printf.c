@@ -7,6 +7,8 @@ void ft_diff(char *ch, size_t *counter, va_list arg)
         ft_putchar_pf(va_arg(arg, int), counter);
     else if (*ch == 's')
         ft_putstr_pf(va_arg(arg, char*), counter);
+    else if (*ch == 'p')
+        ft_putptr_pf(va_arg(arg, void *), counter);
 
     
 }
