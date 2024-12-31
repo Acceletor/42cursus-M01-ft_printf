@@ -1,7 +1,7 @@
 #include "ft_printf.h"
 
 
-void ft_diff(char *ch, size_t *counter, va_list arg)
+static void ft_diff(char *ch, size_t *counter, va_list arg)
 {
     if (*ch == 'c')
         ft_putchar_pf(va_arg(arg, int), counter);
@@ -9,7 +9,8 @@ void ft_diff(char *ch, size_t *counter, va_list arg)
         ft_putstr_pf(va_arg(arg, char*), counter);
     else if (*ch == 'p')
         ft_putptr_pf(va_arg(arg, void *), counter);
-
+    else if (*ch == 'd' || *ch == 'i')
+        ft_putnbr_pf(va_arg(arg, int), counter);
     
 }
 
