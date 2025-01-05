@@ -6,6 +6,8 @@ SRC = 	ft_printf.c \
 		ft_putptr_pf.c \
 		ft_putnbr_pf.c \
 		ft_convert_pf.c \
+		ft_putuint_pf.c \
+		
 
 
 OBJS = $(SRC:.c=.o)

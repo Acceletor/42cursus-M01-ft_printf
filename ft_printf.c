@@ -11,6 +11,9 @@ static void ft_diff(char *ch, size_t *counter, va_list arg)
         ft_putptr_pf(va_arg(arg, void *), counter);
     else if (*ch == 'd' || *ch == 'i')
         ft_putnbr_pf(va_arg(arg, int), counter);
+    else if (*ch == 'u')
+        ft_putuint_pf(va_arg(arg, unsigned int), counter);
+
     
 }
 

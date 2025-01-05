@@ -14,6 +14,7 @@ void    ft_putchar_pf(char c, size_t *count);
 void    ft_putstr_pf(char *str, size_t *counter);
 void    ft_putptr_pf(void *ptr, size_t *counter);
 void    ft_putnbr_pf(int num, size_t *counter);
+void    ft_putuint_pf(unsigned int num, size_t *counter);
 
 
 char    *ft_convert_pf(unsigned long long n, char *base);
