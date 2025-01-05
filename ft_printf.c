@@ -12,9 +12,13 @@ static void ft_diff(char *ch, size_t *counter, va_list arg)
     else if (*ch == 'd' || *ch == 'i')
         ft_putnbr_pf(va_arg(arg, int), counter);
     else if (*ch == 'u')
-        ft_putuint_pf(va_arg(arg, unsigned int), counter);
-
-    
+        ft_putuint_pf(va_arg(arg, unsigned int), counter, "0123456789");
+    else if (*ch == 'x')
+        ft_putuint_pf(va_arg(arg, unsigned int), counter, HEX_LOWER_BASE);
+    else if (*ch == 'X')
+        ft_putuint_pf(va_arg(arg, unsigned int), counter, HEX_UPPER_BASE);
+    else if (*ch == '%')
+        ft_putchar_pf(*ch, counter);
 }
 
 int ft_printf(const char *ch, ...)
