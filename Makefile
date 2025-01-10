@@ -6,7 +6,7 @@
 #    By: ksuebtha <ksuebtha@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/10 14:32:08 by ksuebtha          #+#    #+#              #
-#    Updated: 2025/01/10 14:32:09 by ksuebtha         ###   ########.fr        #
+#    Updated: 2025/01/10 15:11:34 by ksuebtha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,6 +33,9 @@ $(NAME) : $(OBJS)
 	@$(AR) $(NAME) $(OBJS)
 
 all: $(NAME)
+
+%.o: %.c
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	@$(RM) $(OBJS)

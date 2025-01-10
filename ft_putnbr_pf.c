@@ -6,7 +6,7 @@
 /*   By: ksuebtha <ksuebtha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 14:23:13 by ksuebtha          #+#    #+#             */
-/*   Updated: 2025/01/10 14:27:07 by ksuebtha         ###   ########.fr       */
+/*   Updated: 2025/01/10 15:04:57 by ksuebtha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,5 @@ void	ft_putnbr_pf(int num, size_t *counter)
 	}
 	else
 		n = (unsigned int)num;
-
 	ft_putunsigned_recursive(n, counter);
 }
