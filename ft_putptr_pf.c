@@ -1,13 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putptr_pf.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ksuebtha <ksuebtha@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/10 14:23:09 by ksuebtha          #+#    #+#             */
+/*   Updated: 2025/01/10 14:25:33 by ksuebtha         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-void ft_putptr_pf(void *ptr, size_t *counter)
+void	ft_putptr_pf(void *ptr, size_t *counter)
 {
-    char *str;
-    unsigned long ptr_address;
+	char			*str;
+	unsigned long	ptr_address;
 
-    ptr_address = (unsigned long)ptr;
-    ft_putstr_pf("0x", counter);
-    str = ft_convert_pf(ptr_address, HEX_LOWER_BASE);
-    ft_putstr_pf(str, counter);
-    free (str);
+	ptr_address = (unsigned long)ptr;
+	ft_putstr_pf("0x", counter);
+	str = ft_convert_pf(ptr_address, HEX_LOWER_BASE);
+	ft_putstr_pf(str, counter);
+	free (str);
 }
