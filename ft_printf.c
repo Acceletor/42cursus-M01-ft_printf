@@ -12,45 +12,50 @@
 
 #include "ft_printf.h"
 
-static void	ft_diff(char *ch, size_t *counter, va_list arg)
+static void	ft_handle_format(char *format, size_t *counter, va_list arg)
 {
-	if (*ch == 'c')
+	if (*format == 'c')
 		ft_putchar_pf(va_arg(arg, int), counter);
-	else if (*ch == 's')
+	else if (*format == 's')
 		ft_putstr_pf(va_arg(arg, char *), counter);
-	else if (*ch == 'p')
+	else if (*format == 'p')
 		ft_putptr_pf(va_arg(arg, void *), counter);
-	else if (*ch == 'd' || *ch == 'i')
+	else if (*format == 'd' || *format == 'i')
 		ft_putnbr_pf(va_arg(arg, int), counter);
-	else if (*ch == 'u')
+	else if (*format == 'u')
 		ft_putuint_pf(va_arg(arg, unsigned int), counter, "0123456789");
-	else if (*ch == 'x')
+	else if (*format == 'x')
 		ft_putuint_pf(va_arg(arg, unsigned int), counter, HEX_LOWER_BASE);
-	else if (*ch == 'X')
+	else if (*format == 'X')
 		ft_putuint_pf(va_arg(arg, unsigned int), counter, HEX_UPPER_BASE);
-	else if (*ch == '%')
-		ft_putchar_pf(*ch, counter);
+	else if (*format == '%')
+		ft_putchar_pf(*format, counter);
+	else
+	{
+	    ft_putchar_pf('%', counter);
+	    ft_putchar_pf(*format, counter);
+	}
 }
 
-int	ft_printf(const char *ch, ...)
+int	ft_printf(const char *format, ...)
 {
 	va_list	arg;
 	size_t	counter;
 
-	if (!ch)
+	if (!format)
 		return (0);
 	counter = 0;
-	va_start(arg, ch);
-	while (*ch)
+	va_start(arg, format);
+	while (*format)
 	{
-		if (*ch == '%' && *(ch + 1))
+		if (*format == '%' && *(format + 1))
 		{
-			ch++;
-			ft_diff((char *)ch, &counter, arg);
+			format++;
+			ft_handle_format((char *)format, &counter, arg);
 		}
 		else
-			ft_putchar_pf(*ch, &counter);
-		ch++;
+			ft_putchar_pf(*format, &counter);
+		format++;
 	}
 	va_end(arg);
 	return (counter);
