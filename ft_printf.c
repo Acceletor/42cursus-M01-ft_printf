@@ -6,7 +6,7 @@
 /*   By: ksuebtha <ksuebtha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 14:23:23 by ksuebtha          #+#    #+#             */
-/*   Updated: 2025/01/10 15:04:29 by ksuebtha         ###   ########.fr       */
+/*   Updated: 2025/01/24 17:47:03 by ksuebtha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ static void	ft_handle_format(char *format, size_t *counter, va_list arg)
 		ft_putchar_pf(*format, counter);
 	else
 	{
-	    ft_putchar_pf('%', counter);
-	    ft_putchar_pf(*format, counter);
+		ft_putchar_pf('%', counter);
+		ft_putchar_pf(*format, counter);
 	}
 }
 
